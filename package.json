@@ -1,6 +1,6 @@
 {
-  "name": "ref-struct",
-  "description": "Create ABI-compliant \"struct\" instances on top of Buffers",
+  "name": "electron-ref-struct",
+  "description": "This is a fork of the ref-struct project, adding electron build and binary support",
   "keywords": [
     "struct",
     "ref",
@@ -10,24 +10,30 @@
     "ffi"
   ],
   "version": "1.0.1",
-  "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)",
+  "author": "Justin Chase <justin@evolvelabs.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/TooTallNate/ref-struct.git"
+    "url": "git://github.com/EvolveLabs/electron-ref.git"
   },
   "main": "./lib/struct.js",
   "license": "MIT",
   "scripts": {
     "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
   },
+  "engines": {
+    "node": ">=2.2.1"
+  },
+  "binaries": [
+    "https://s3.amazonaws.com/evolve-bin/{name}/{name}-{version}-{platform}-{arch}-{configuration}-{channel}.tgz"
+  ],
   "dependencies": {
     "debug": "2",
-    "ref": "1"
+    "electron-ref": "1.0.5"
   },
   "devDependencies": {
     "bindings": "~1.2.0",
     "nan": "~1.7.0",
     "mocha": "*",
-    "ref-array": "~0.0.3"
+    "electron-ref-array": "1.1.1"
   }
 }
