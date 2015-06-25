@@ -1,1 +1,6 @@
+.npmignore
+.jshintrc
+*.yml
+*.tgz
+
 /test
