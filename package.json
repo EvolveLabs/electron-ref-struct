@@ -9,7 +9,7 @@
     "c++",
     "ffi"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Justin Chase <justin@evolvelabs.com>",
   "repository": {
     "type": "git",
@@ -28,12 +28,12 @@
   ],
   "dependencies": {
     "debug": "2",
-    "electron-ref": "1.0.5"
+    "electron-ref": "1.0.6"
   },
   "devDependencies": {
     "bindings": "~1.2.0",
     "nan": "~1.7.0",
     "mocha": "*",
-    "electron-ref-array": "1.1.1"
+    "electron-ref-array": "1.1.2"
   }
 }
