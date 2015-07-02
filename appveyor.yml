@@ -1,33 +1,24 @@
-# http://www.appveyor.com/docs/appveyor-yml
+os: Visual Studio 2015 CTP
+platform: x64
+version: "{build}"
 
-# Test against these versions of Node.js.
 environment:
-  matrix:
-    - nodejs_version: "0.8"
-    - nodejs_version: "0.10"
-    - nodejs_version: "0.11"
-    - nodejs_version: "0.12"
-    - nodejs_version: "1.5.1"
+  target: "0.28.2"
+  nodejs_version: "2.2.1"
+  publish_binary: false
+  bin_dir: ./node_modules/electron-updater-tools/bin
 
-# Install scripts. (runs after repo cloning)
 install:
-  # Get the latest stable version of Node 0.STABLE.latest
-  - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version)
-  # Typical npm stuff.
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version $env:platform
+  # install modules
+  - npm install -g is-property # workaround until node 2.3.1
+  - npm install -g node-gyp
+  - npm install -g electron-prebuilt@%target%
   - npm install
 
-# Post-install test scripts.
 test_script:
-  # Output useful info for debugging.
-  - node --version
-  - npm --version
-  # We test multiple Windows shells because of Node.js stdout buffering issues:
-  # https://github.com/joyent/node/issues/3584
-  - ps: "npm test # PowerShell" # Pass comment to PS for easier debugging
-  - cmd: npm test
+  - npm test
 
 # Don't actually build.
 build: off
-
-# Set build version format here instead of in the admin panel.
-version: "{build}"

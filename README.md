@@ -1,7 +1,7 @@
 ref-struct
 ==========
 ### Create ABI-compliant "[struct][]" instances on top of Buffers
-[![Build Status](https://secure.travis-ci.org/TooTallNate/ref-struct.svg)](https://travis-ci.org/TooTallNate/ref-struct)
+[![Build Status](https://secure.travis-ci.org/EvolveLabs/electron-ref-struct.svg)](https://travis-ci.org/EvolveLabs/electron-ref-struct)
 [![Build Status](https://ci.appveyor.com/api/projects/status/6v4h5v5kh9kmtke8?svg=true)](https://ci.appveyor.com/project/TooTallNate/ref-struct)
 
 
@@ -14,7 +14,7 @@ Installation
 Install with `npm`:
 
 ``` bash
-$ npm install ref-struct
+$ npm install electron-ref-struct
 ```
 
 
@@ -31,8 +31,8 @@ struct timeval {
 ```
 
 ``` js
-var ref = require('ref')
-var StructType = require('ref-struct')
+var ref = require('electron-ref')
+var StructType = require('electron-ref-struct')
 
 // define the time types
 var time_t = ref.types.long
@@ -67,8 +67,8 @@ instance of the struct type, then the struct type is finalized, and no more
 properties may be added to it.
 
 ``` js
-var ref = require('ref')
-var StructType = require('ref-struct')
+var ref = require('electron-ref')
+var StructType = require('electron-ref-struct')
 
 var MyStruct = Struct()
 MyStruct.defineProperty('width', ref.types.int)
@@ -109,3 +109,9 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [struct]: http://wikipedia.org/wiki/Struct_(C_programming_language)
+
+Fork Notes
+----------
+This fork adds electron build support, compatible with [electron-updater](https://github.com/evolvelabs/electron-updater).
+
+It does not directly contain binaries but depends on [electron-ref](https://github.com/evolvelabs/electron-ref), which does.

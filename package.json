@@ -9,7 +9,7 @@
     "c++",
     "ffi"
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Justin Chase <justin@evolvelabs.com>",
   "repository": {
     "type": "git",
@@ -18,22 +18,20 @@
   "main": "./lib/struct.js",
   "license": "MIT",
   "scripts": {
-    "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
+    "test": "cd test && bash ../node_modules/.bin/elb configure && cd .. && mocha -gc --reporter spec"
   },
   "engines": {
     "node": ">=2.2.1"
   },
-  "binaries": [
-    "https://s3.amazonaws.com/evolve-bin/{name}/{name}-{version}-{platform}-{arch}-{configuration}-{channel}.tgz"
-  ],
   "dependencies": {
     "debug": "2",
-    "electron-ref": "1.0.6"
+    "electron-ref": "~1.0.10"
   },
   "devDependencies": {
     "bindings": "~1.2.0",
     "nan": "~1.7.0",
     "mocha": "*",
-    "electron-ref-array": "1.1.2"
+    "electron-ref-array": "1.1.2",
+    "electron-updater-tools": "~0.1.x"
   }
 }
