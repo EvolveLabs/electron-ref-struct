@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <delay_load_hook.h>
 #include "nan.h"
 
 #ifdef _WIN32
