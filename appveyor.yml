@@ -4,7 +4,7 @@ version: "{build}"
 
 environment:
   target: "0.28.2"
-  nodejs_version: "2.2.1"
+  nodejs_version: "3.2.0"
   publish_binary: false
   bin_dir: ./node_modules/electron-updater-tools/bin
 

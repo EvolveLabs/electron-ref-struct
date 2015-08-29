@@ -7,13 +7,17 @@
     "abi",
     "c",
     "c++",
-    "ffi"
+    "ffi",
+    "electron"
   ],
-  "version": "1.0.3",
-  "author": "Justin Chase <justin@evolvelabs.com>",
+  "version": "1.1.0",
+  "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)",
+  "contributors": [
+    "Justin Chase <justin@evolvelabs.com>"
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/EvolveLabs/electron-ref.git"
+    "url": "git://github.com/EvolveLabs/electron-ref-struct.git"
   },
   "main": "./lib/struct.js",
   "license": "MIT",
@@ -21,17 +25,18 @@
     "test": "cd test && bash ../node_modules/.bin/elb configure && cd .. && mocha -gc --reporter spec"
   },
   "engines": {
-    "node": ">=2.2.1"
+    "node": ">=3.2.0",
+    "electron": "~0.31.0"
   },
   "dependencies": {
     "debug": "2",
-    "electron-ref": "~1.0.10"
+    "electron-ref": "~1.1.1"
   },
   "devDependencies": {
-    "bindings": "~1.2.0",
-    "nan": "~1.8.4",
+    "bindings": "*",
     "mocha": "*",
-    "electron-ref-array": "1.1.4",
-    "electron-updater-tools": "~0.1.x"
+    "electron-ref-array": "1.2.0",
+    "electron-updater-tools": "~0.2.0",
+    "nan": "~2.0.0"
   }
 }
