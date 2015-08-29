@@ -11,6 +11,7 @@
     "electron"
   ],
   "version": "1.1.0",
+  "license": "MIT",
   "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)",
   "contributors": [
     "Justin Chase <justin@evolvelabs.com>"
@@ -22,7 +23,7 @@
   "main": "./lib/struct.js",
   "license": "MIT",
   "scripts": {
-    "test": "cd test && bash ../node_modules/.bin/elb configure && cd .. && mocha -gc --reporter spec"
+    "test": "cd test && bash ../node_modules/.bin/elb configure --target 0.31.0 && cd .. && mocha -gc --reporter spec"
   },
   "engines": {
     "node": ">=3.2.0",

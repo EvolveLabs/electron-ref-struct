@@ -29,7 +29,6 @@ install:
   - nvm install iojs
   # npm dependencies
   - npm install node-gyp -g
-  - npm install electron-prebuilt -g
   - npm install
 
 script:
